@@ -4,7 +4,8 @@
 
 @model Favorful.Models.Treat
 
-<h4>ADD TREAT</h4>
+<h1>ADD TREAT</h1>
+<hr/>
 
 @using (Html.BeginForm())
 {
@@ -13,9 +14,24 @@
     @Html.TextBoxFor(model => model.Name)
     <br>
     <br>
-    @Html.Label("Select Flavor")
+    @Html.LabelFor(model => model.CustomerRating)
     <br>
-    @Html.DropDownList("FlavorId")
+    @Html.TextBoxFor(model => model.CustomerRating, new {@type="number", @min=1, @max=5})
+    <br>
+    <br>
+    @Html.LabelFor(model => model.Price)
+    <br>
+    @Html.TextBoxFor(model => model.Price, new {@type="number", @min=1})
+    <br>
+    <br>
+    @Html.LabelFor(model => model.Description)
+    <br>
+    @Html.TextBoxFor(model => model.Description)
+    <br>
+    <br>
+    @Html.LabelFor(model => model.CurrentStock)
+    <br>
+    @Html.TextBoxFor(model => model.CurrentStock, new {@type="number", @min=0})
     <br>
     <br>
     <input type="submit" value="Add new Treat" class="btn btn-default" />

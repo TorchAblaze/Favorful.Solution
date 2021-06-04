@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace Favorful.Models
 {
@@ -14,7 +15,8 @@ namespace Favorful.Models
     public int TreatId { get; set; }
     public string Name { get; set; }
 
-    [Display(Name = "Customer Rating")]
+    [Display(Name = "Customer Rating (out of 5)")]
+    [Range(1,5)]
     public int CustomerRating { get; set; }
 
     public int Price { get; set; }

@@ -1,0 +1,40 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Favorful.Models.Treat
+
+<h1>TREAT INFOMRATION</h1>
+<hr />
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+
+<p class="blocktext"><strong>@Html.DisplayNameFor(model => model.CustomerRating):</strong> @Html.DisplayFor(model => model.CustomerRating)</p>
+<p class="blocktext"><strong>@Html.DisplayNameFor(model => model.Price):</strong> @Html.DisplayFor(model => model.Price)</p>
+<p class="blocktext"><strong>@Html.DisplayNameFor(model => model.Description):</strong> @Html.DisplayFor(model => model.Description)</p>
+<p class="blocktext"><strong>@Html.DisplayNameFor(model => model.CurrentStock):</strong> @Html.DisplayFor(model => model.CurrentStock)</p>
+<hr />
+@if (@Model.JoinEntities.Count == 0)
+{
+  <h2>This treat doesn't have any flavors</h2>
+}
+else
+{
+  <h2>Treat Flavors @Html.DisplayFor(model => model.Name):</h2>
+  <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Flavor.Type</li>
+      @using (Html.BeginForm("DeleteFlavor", "Treats"))
+      {
+        @Html.Hidden("joinId", @join.FlavorTreatId)
+        <input type="submit" value="Remove Flavor" class="delete-object"/>
+      }
+    }
+  </ul>
+}
+<hr />
+<p>@Html.ActionLink("Assign to Flavor", "AddFlavor", new { id = Model.TreatId}, new {@class="button"})</p>
+<p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId}, new {@class="button"})</p>
+<p>@Html.ActionLink("Remove Treat", "Delete", new { id = Model.TreatId}, new {@class="button"})</p>
+<p>@Html.ActionLink("Back to Treat list", "Index", "Treats", null, new { @class="button" })</p>

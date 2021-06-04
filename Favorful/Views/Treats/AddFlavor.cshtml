@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Favorful.Models.Treat
+
+<h1>FLAVOR ASSIGNMENT</h1>
+<hr />
+<h2>Give @Html.DisplayFor(model => model.Name)  a flavor</h2>
+
+@if (Enumerable.Count(ViewBag.FlavorId) != 0)
+{
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.TreatId)
+
+    @Html.Label("Select Flavor")
+    <br>
+    @Html.DropDownList("FlavorId")
+    <br>
+    <br>
+    <input type="submit" value="Save">
+  }
+}
+else
+{
+  <h4>This treat doesn't have any flavors</h4>
+  <p>@Html.ActionLink("Add new Flavor", "Create", "Flavors", null, new {@class="button"})</p>
+}
+<hr />
+<p>@Html.ActionLink("Back to treat list", "Index", "Treats", null, new {@class="button"})</p>

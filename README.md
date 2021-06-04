@@ -1,12 +1,12 @@
-# Project Name
+# Favorful
 
-#### _Brief Project Description, 5/21/2021_
+#### _An admin bakery website, 6/4/2021_
 
 #### By _**Tiffany Greathead**_
 
 ## Description
 
-Project Description.
+A punny bakery with all your favorite flavors.
 
 ## Setup and Use
 
@@ -20,11 +20,11 @@ Project Description.
 
 ### Installation
 
-1. Clone the repository: `$ git clone {clone link}`
-2. Navigate to the `{Template.Solution}` directory on your computer
+1. Clone the repository: `$ git clone https://github.com/TorchAblaze/Favorful.Solution.git`
+2. Navigate to the `Favorful` directory on your computer
 3. Open with your preferred text editor to view the code base
 4. To setup a SQL database using MySQL:
-   - Create an `appsettings.json` file in the `{WeekFiveTemplate}` directory
+   - Create an `appsettings.json` file in the `Favorful` directory
    - Copy the text box below and paste into the `appsettings.json` file, replacing `<password>` with your MySQL password:
    ```
      {
@@ -36,9 +36,9 @@ Project Description.
    - Open your terminal and run the command: `mysql -uroot -p<mysql_password>` (replace `<mysql_password>` with your MySQL password) to launch MySQL server
 5. To serve the local web app:
 
-- Navigate to `{Template.Solution/WeekFiveTemplate}` in your command line
+- Navigate to `Favorful.Solution/Favorful` in your command line
 - Run the commands:
-  - `dotnet restore` to restore the dependencies that are listed in `{Template.csproj}`
+  - `dotnet restore` to restore the dependencies that are listed in `Favorful.csproj`
   - `dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0`
   - `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2`
   - `dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0`

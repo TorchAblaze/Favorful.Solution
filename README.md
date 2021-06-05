@@ -6,7 +6,7 @@
 
 ## Description
 
-A punny bakery with all your favorite flavors.
+A punny bakery with all your favorite flavors. Users can create an account and login to add different types of flavors and treats available at Pierre's Bakery.
 
 ## Setup and Use
 
@@ -43,6 +43,7 @@ A punny bakery with all your favorite flavors.
   - `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2`
   - `dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0`
   - `dotnet build` to build the project and its dependencies into a set of binaries
+  - `dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore -v 5.0.0`
   - `dotnet tool install --global dotnet-ef` to install EF Core tools
   - `dotnet ef database update`
 - Finally, run the command `dotnet run` to run the project!

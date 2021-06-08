@@ -53,7 +53,7 @@ A punny bakery with all your favorite flavors. Users can create an account and l
 
 ## Known Bugs
 
-_No known bugs_ :bug:
+- This application was not tested due to technical difficulties with MySQL
 
 ## Support and contact details
 

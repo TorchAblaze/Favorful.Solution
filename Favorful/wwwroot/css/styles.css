@@ -1,10 +1,6 @@
 body {
   text-align: center;
-}
-
-ul {
-  text-align: left;
-  margin-left: 50%;
+  background-color: lightsalmon;
 }
 
 div#footer {
@@ -15,4 +11,28 @@ div#footer {
   color: #ccc;
   background: #333;
   padding: 8px;
+}
+
+.blocktext,
+li {
+  text-align: left;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30em;
+}
+
+a:link.button,
+a:visited.button {
+  background-color: rgba(241, 241, 241, 0.952);
+  color: black;
+  font-size: medium;
+  padding: 9px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid #1de2e9b9;
+  border-radius: 50px;
+  margin: 3px;
+  width: 14em;
 }

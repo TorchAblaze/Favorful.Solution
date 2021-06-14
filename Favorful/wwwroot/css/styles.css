@@ -24,15 +24,19 @@ li {
 
 a:link.button,
 a:visited.button {
-  background-color: rgba(241, 241, 241, 0.952);
+  background-color: lightsalmon;
   color: black;
   font-size: medium;
   padding: 9px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border: 2px solid lightsalmon;
+  border: 2px solid black;
   border-radius: 50px;
   margin: 3px;
   width: 14em;
+}
+
+a:hover.button {
+  background-color: lightgoldenrodyellow;
 }

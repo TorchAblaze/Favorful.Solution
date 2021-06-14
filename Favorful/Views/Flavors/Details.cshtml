@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Favorful.Models.Flavor
+
+<h1>MACHINE INFOMRATION</h1>
+<hr />
+
+<h2>@Html.DisplayFor(model => model.Type)</h2>
+<hr />
+@if (@Model.JoinEntities.Count == 0)
+{
+  <h2>This flavor currently doesn't have any treats</h2>
+}
+else
+{
+  <h2>@Html.DisplayFor(model => model.Type) Treats:</h2>
+  <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Treat.Name</li>
+      @using (Html.BeginForm("DeleteTreat", "Flavors"))
+      {
+        @Html.Hidden("joinId", @join.FlavorTreatId)
+        <input type="submit" value="Remove Treat" class="delete-object"/>
+      }
+    }
+  </ul>
+}
+<hr />
+<p>@Html.ActionLink("Assign to Treat", "AddTreat", new { id = Model.FlavorId}, new {@class="button"})</p>
+<p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId}, new {@class="button"})</p>
+<p>@Html.ActionLink("Remove Flavor", "Delete", new { id = Model.FlavorId}, new {@class="button"})</p>
+<p>@Html.ActionLink("Back to flavor list", "Index", "Flavors", null, new { @class="button" })</p>

@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Favorful.Models.Flavor
+
+<h1>ADD A NEW FLAVOR</h1>
+<hr />
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Type)
+  @Html.TextBoxFor(model => model.Type, new {@class="form-control", @required="required"})
+  <br>
+  <input type="submit" value="Add new Flavor">
+}
+<hr />
+<p>@Html.ActionLink("Show all Flavor", "Index", "Flavors", null, new {@class="button"})</p>

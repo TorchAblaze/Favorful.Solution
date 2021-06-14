@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Favorful.Models.Flavor
+
+<h1>EDIT Flavor</h1>
+<hr />
+
+<h2>@Html.DisplayFor(model => model.Type)</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+
+  @Html.LabelFor(model => model.Type)
+  <br>
+  @Html.EditorFor(model => model.Type)
+  <br>
+  <br>
+  @if (Enumerable.Count(ViewBag.TreatId) != 0)
+  {
+    @Html.Label("Assign Treat")
+    <br>
+    @Html.DropDownList("TreatId")
+    <br>
+    <br>
+  }
+  <input type="submit" value="Save">
+  <br>
+  <br>
+}
+<hr />
+<p>@Html.ActionLink("Back to Flavor List", "Index", "Flavor", null, new {@class="button"})</p>

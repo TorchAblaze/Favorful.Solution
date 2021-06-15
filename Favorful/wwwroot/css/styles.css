@@ -31,7 +31,7 @@ a:visited.button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border: 2px solid black;
+  border: 2px solid rgb(12, 12, 12);
   border-radius: 50px;
   margin: 3px;
   width: 14em;
